@@ -21,7 +21,8 @@
 
 @implementation InternetViewController
 
-- (void)viewDidLoad {
+- (void)viewDidLoad
+    {
     [super viewDidLoad];
     self.webView.delegate = self;
     NSURL *url = [NSURL URLWithString:@"http://www.mobilemakers.co"];
@@ -30,13 +31,15 @@
 
 }
 
--(void)webViewDidStartLoad:(UIWebView *)webView {
+-(void)webViewDidStartLoad:(UIWebView *)webView
+    {
     [self.spinner startAnimating];
     self.urlTextField.text = [[webView.request URL] absoluteString];
 
 }
 
--(void)webViewDidFinishLoad:(UIWebView *)webView {
+-(void)webViewDidFinishLoad:(UIWebView *)webView
+    {
     [self.spinner stopAnimating];
     NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.navigationItem.title = title;
@@ -62,7 +65,7 @@
 //Returns: url address
 
 -(void)loadUrlRequestFromString:(NSString *)string
-{
+    {
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];

@@ -31,8 +31,14 @@
 
 
 # pragma mark - calulations
+
 - (IBAction)onCalculateButtonPressed:(UIButton *)sender {
 
+//Dismmiss Keypad
+    [self.valueOneTextField resignFirstResponder];
+    [self.valueTwoTextField resignFirstResponder];
+
+// Declare Variables
     int ValueOne = [self.valueOneTextField.text intValue];
     int ValueTwo = [self.valueTwoTextField.text intValue];
     self.result = ValueOne * ValueTwo;
@@ -43,31 +49,20 @@
     self.navigationBarItem.title =[NSString stringWithFormat:@"%i", self.result];
 
 
-
+// If result is a multiple of 5, enable webview button
     if (self.result %5 == 0 ) {
         self.webViewButton.enabled = TRUE;
 
 
 }
+    // else, leave disabled
     else {
         self.webViewButton.enabled = FALSE;
 }
-
-[self.valueOneTextField resignFirstResponder];
-
-}
-
-//Dismiss keypad after pressing return
-
-- (BOOL)textFieldShouldReturn:(UITextField *)textField {
-
-    [self.valueOneTextField resignFirstResponder];
-    [self.valueTwoTextField resignFirstResponder];
-    [self.calculateButton resignFirstResponder];
-    return YES;
 }
 
 
+//Prepare for segue to next view controller
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
     InternetViewController *vc = segue.destinationViewController;
