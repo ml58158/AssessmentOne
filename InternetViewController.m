@@ -8,8 +8,14 @@
 
 #import "InternetViewController.h"
 
-@interface InternetViewController () <UIWebViewDelegate>
+@interface InternetViewController () <UIWebViewDelegate,
+    UITextFieldDelegate,
+    UIScrollViewDelegate
+    >
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
+@property (strong, nonatomic) IBOutlet UIActivityIndicatorView *spinner;
+@property (strong, nonatomic) IBOutlet UITextField *urlTextField;
+@property (strong, nonatomic) IBOutlet UINavigationItem *urlNavTitle;
 
 @end
 
@@ -19,12 +25,47 @@
     [super viewDidLoad];
     self.webView.delegate = self;
     NSURL *url = [NSURL URLWithString:@"http://www.mobilemakers.co"];
-    NSURLRequest *urlRequest = [NS]
-
-
+    NSURLRequest *urlRequest = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:urlRequest];
 
 }
 
+-(void)webViewDidStartLoad:(UIWebView *)webView {
+    [self.spinner startAnimating];
+    self.urlTextField.text = [[webView.request URL] absoluteString];
 
+}
+
+-(void)webViewDidFinishLoad:(UIWebView *)webView {
+    [self.spinner stopAnimating];
+    NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    self.navigationItem.title = title;
+}
+
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+
+    if (![textField.text hasPrefix:@"http://"])
+    {
+        textField.text = [NSString stringWithFormat:@"http://%@", textField.text];
+}
+
+    [self loadUrlRequestFromString:textField.text];
+    return true;
+
+}
+#pragma mark - helper methods
+
+//Name: LoadUrlRequestFromString
+//Function: Load url address from string and pass request to webview to load.
+//Returns: url address
+
+-(void)loadUrlRequestFromString:(NSString *)string
+{
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    [self.webView loadRequest:request];
+}
 
 @end

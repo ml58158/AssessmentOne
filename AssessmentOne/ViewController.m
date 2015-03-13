@@ -7,8 +7,9 @@
 //
 
 #import "ViewController.h"
+#import "InternetViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UITextFieldDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *valueOneTextField;
 @property (strong, nonatomic) IBOutlet UITextField *valueTwoTextField;
 @property (strong, nonatomic) IBOutlet UIButton *calculateButton;
@@ -22,7 +23,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.valueOneTextField.delegate = self;
+    self.valueTwoTextField.delegate = self;
+    self.valueOneTextField.returnKeyType = UIReturnKeyDone;
+    self.valueTwoTextField.returnKeyType = UIReturnKeyDone;
 }
 
 
@@ -37,7 +41,6 @@
 // Assign Value From Result Label
 
     self.navigationBarItem.title =[NSString stringWithFormat:@"%i", self.result];
-    [self.valueOneTextField resignFirstResponder];
 
 
 
@@ -45,15 +48,32 @@
         self.webViewButton.enabled = TRUE;
 
 
-    } else {
+}
+    else {
         self.webViewButton.enabled = FALSE;
-    }
+}
 
-
-
+[self.valueOneTextField resignFirstResponder];
 
 }
 
+//Dismiss keypad after pressing return
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+
+    [self.valueOneTextField resignFirstResponder];
+    [self.valueTwoTextField resignFirstResponder];
+    [self.calculateButton resignFirstResponder];
+    return YES;
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+
+    InternetViewController *vc = segue.destinationViewController;
+    vc.title = @"Internet Browser";
+
+}
 
 
 

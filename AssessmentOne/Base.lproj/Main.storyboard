@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14D87h" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="KWV-ND-9Mc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Answer-->
@@ -16,24 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2d-IS-uhC">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="M2d-IS-uhC">
                                 <rect key="frame" x="34" y="143" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="4OT-0v-YID"/>
+                                    <constraint firstAttribute="height" constant="30" id="vdQ-af-T40"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptb-bJ-HEb">
-                                <rect key="frame" x="196" y="143" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2a-HW-h1m">
-                                <rect key="frame" x="143" y="147" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiw-Hq-Ncg">
-                                <rect key="frame" x="125" y="196" width="79" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oiw-Hq-Ncg">
+                                <rect key="frame" x="121" y="196" width="79" height="30"/>
                                 <state key="normal" title="Calculate">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -41,8 +35,40 @@
                                     <action selector="onCalculateButtonPressed:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="ek5-fj-YlG"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptb-bJ-HEb">
+                                <rect key="frame" x="193" y="143" width="97" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Vxw-IF-egd"/>
+                                    <constraint firstAttribute="width" constant="97" id="ofv-uz-EjA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="X" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2a-HW-h1m">
+                                <rect key="frame" x="143" y="147" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="M2d-IS-uhC" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="79" id="3gj-Eq-oE0"/>
+                            <constraint firstItem="M2d-IS-uhC" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="18" id="GmX-Ib-Dut"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="oiw-Hq-Ncg" secondAttribute="bottom" constant="342" id="Gu4-ZQ-oet"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="M2d-IS-uhC" secondAttribute="bottom" constant="395" id="MEh-q2-hxT"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="Ptb-bJ-HEb" secondAttribute="bottom" constant="395" id="TYM-aM-0Gy"/>
+                            <constraint firstItem="Ptb-bJ-HEb" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="79" id="XgW-SE-7vQ"/>
+                            <constraint firstItem="oiw-Hq-Ncg" firstAttribute="top" secondItem="J2a-HW-h1m" secondAttribute="bottom" constant="28" id="XwX-eC-2WR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ptb-bJ-HEb" secondAttribute="trailing" constant="14" id="ZCp-7S-g2S"/>
+                            <constraint firstItem="Ptb-bJ-HEb" firstAttribute="leading" secondItem="J2a-HW-h1m" secondAttribute="trailing" constant="8" id="bVE-zu-vCm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="oiw-Hq-Ncg" secondAttribute="trailing" constant="104" id="cZd-ts-gFp"/>
+                            <constraint firstItem="oiw-Hq-Ncg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="105" id="pYc-SW-2z6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="M2d-IS-uhC" secondAttribute="trailing" constant="173" id="uWp-zw-8ss"/>
+                            <constraint firstItem="J2a-HW-h1m" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="83" id="ucM-eZ-dBi"/>
+                            <constraint firstItem="Ptb-bJ-HEb" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="177" id="zEg-iP-cyS"/>
+                            <constraint firstItem="J2a-HW-h1m" firstAttribute="leading" secondItem="M2d-IS-uhC" secondAttribute="trailing" constant="12" id="zt7-Cn-Uhu"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Answer" id="hJh-oN-gp5">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="i6k-hh-i2r">
@@ -70,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="694" y="406"/>
         </scene>
-        <!--Internet View Controller-->
+        <!--Title-->
         <scene sceneID="ZPr-I7-uZY">
             <objects>
                 <viewController id="gkC-zS-uxc" customClass="InternetViewController" sceneMemberID="viewController">
@@ -82,15 +108,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-I9-lC3">
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pkb-I9-lC3">
                                 <rect key="frame" x="-6" y="64" width="326" height="504"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </webView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="4NN-DU-1vZ">
+                                <rect key="frame" x="150" y="306" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="K3e-Ys-NTX"/>
+                                    <constraint firstAttribute="width" constant="20" id="egm-xQ-g6X"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VjP-Va-QMl">
+                                <rect key="frame" x="16" y="79" width="288" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="URL"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7hy-a8-2at" firstAttribute="top" secondItem="Pkb-I9-lC3" secondAttribute="bottom" id="I9L-XG-AiF"/>
+                            <constraint firstItem="Pkb-I9-lC3" firstAttribute="top" secondItem="IgH-Kq-dmx" secondAttribute="bottom" id="N48-w1-lob"/>
+                            <constraint firstItem="Pkb-I9-lC3" firstAttribute="leading" secondItem="uch-NO-sfh" secondAttribute="leadingMargin" constant="-22" id="ONh-05-UdO"/>
+                            <constraint firstItem="VjP-Va-QMl" firstAttribute="leading" secondItem="uch-NO-sfh" secondAttribute="leadingMargin" id="RfQ-OJ-hmG"/>
+                            <constraint firstItem="7hy-a8-2at" firstAttribute="top" secondItem="4NN-DU-1vZ" secondAttribute="bottom" constant="242" id="SWr-KZ-Mdq"/>
+                            <constraint firstItem="4NN-DU-1vZ" firstAttribute="leading" secondItem="Pkb-I9-lC3" secondAttribute="trailing" constant="-170" id="awT-HP-lcT"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pkb-I9-lC3" secondAttribute="trailing" constant="-16" id="hTv-B1-611"/>
+                            <constraint firstItem="Pkb-I9-lC3" firstAttribute="top" secondItem="VjP-Va-QMl" secondAttribute="bottom" constant="-45" id="hhy-HV-Tpb"/>
+                            <constraint firstItem="4NN-DU-1vZ" firstAttribute="leading" secondItem="uch-NO-sfh" secondAttribute="leadingMargin" constant="134" id="tq7-ab-1t0"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4NN-DU-1vZ" secondAttribute="trailing" constant="134" id="vba-lj-h7O"/>
+                            <constraint firstItem="VjP-Va-QMl" firstAttribute="trailing" secondItem="uch-NO-sfh" secondAttribute="trailingMargin" id="wOF-z6-Ugr"/>
+                            <constraint firstItem="4NN-DU-1vZ" firstAttribute="top" secondItem="VjP-Va-QMl" secondAttribute="bottom" constant="197" id="zVv-Bg-P1G"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2wT-0C-pLv"/>
+                    <navigationItem key="navigationItem" title="Title" id="2wT-0C-pLv"/>
                     <connections>
+                        <outlet property="spinner" destination="4NN-DU-1vZ" id="Frv-J6-r7g"/>
+                        <outlet property="urlNavTitle" destination="2wT-0C-pLv" id="fTk-7B-trW"/>
+                        <outlet property="urlTextField" destination="VjP-Va-QMl" id="mHD-om-0Uv"/>
                         <outlet property="webView" destination="Pkb-I9-lC3" id="kVe-Dw-AJO"/>
                     </connections>
                 </viewController>
