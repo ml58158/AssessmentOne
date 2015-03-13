@@ -14,6 +14,7 @@
 		C459E01E1AB3268700BAB912 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C459E01D1AB3268700BAB912 /* Images.xcassets */; };
 		C459E0211AB3268700BAB912 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C459E01F1AB3268700BAB912 /* LaunchScreen.xib */; };
 		C459E02D1AB3268700BAB912 /* AssessmentOneTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C459E02C1AB3268700BAB912 /* AssessmentOneTests.m */; };
+		C459E0381AB3300400BAB912 /* InternetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C459E0371AB3300400BAB912 /* InternetViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		C459E0261AB3268700BAB912 /* AssessmentOneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AssessmentOneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C459E02B1AB3268700BAB912 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C459E02C1AB3268700BAB912 /* AssessmentOneTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AssessmentOneTests.m; sourceTree = "<group>"; };
+		C459E0361AB3300400BAB912 /* InternetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = InternetViewController.h; path = ../InternetViewController.h; sourceTree = "<group>"; };
+		C459E0371AB3300400BAB912 /* InternetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = InternetViewController.m; path = ../InternetViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				C459E0151AB3268700BAB912 /* AppDelegate.m */,
 				C459E0171AB3268700BAB912 /* ViewController.h */,
 				C459E0181AB3268700BAB912 /* ViewController.m */,
+				C459E0361AB3300400BAB912 /* InternetViewController.h */,
+				C459E0371AB3300400BAB912 /* InternetViewController.m */,
 				C459E01A1AB3268700BAB912 /* Main.storyboard */,
 				C459E01D1AB3268700BAB912 /* Images.xcassets */,
 				C459E01F1AB3268700BAB912 /* LaunchScreen.xib */,
@@ -222,6 +227,7 @@
 				C459E0191AB3268700BAB912 /* ViewController.m in Sources */,
 				C459E0161AB3268700BAB912 /* AppDelegate.m in Sources */,
 				C459E0131AB3268700BAB912 /* main.m in Sources */,
+				C459E0381AB3300400BAB912 /* InternetViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
