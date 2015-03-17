@@ -23,6 +23,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.webViewButton.enabled = FALSE;
     self.valueOneTextField.delegate = self;
     self.valueTwoTextField.delegate = self;
     self.valueOneTextField.returnKeyType = UIReturnKeyDone;

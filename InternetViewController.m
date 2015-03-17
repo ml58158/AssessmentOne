@@ -34,15 +34,17 @@
 -(void)webViewDidStartLoad:(UIWebView *)webView
     {
     [self.spinner startAnimating];
-    self.urlTextField.text = [[webView.request URL] absoluteString];
-
+     self.urlTextField.text = [[webView.request URL] absoluteString];
+     self.spinner.hidden = false;
 }
 
 -(void)webViewDidFinishLoad:(UIWebView *)webView
     {
-    [self.spinner stopAnimating];
+
     NSString *title = [self.webView stringByEvaluatingJavaScriptFromString:@"document.title"];
     self.navigationItem.title = title;
+    [self.spinner stopAnimating];
+     self.spinner.hidden = true;
 }
 
 
